@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">CludeRQuest</string>
+    <string name="clude_r_quest">Clude R Quest</string>
+    <string name="scan">Scan</string>
+    <string name="next">Next</string>
+    <string name="demo">main()\n{\nprint("\""this is Demo program."\"");\n}</string>
+    <string name="q1">#include"&lt;"stdio.h"&gt;"\n
+int main()\n
+{\n
+	float j = 0.1;\n
+	int a = 5;\n
+	if(j == 0.1)\n
+	{\n
+		\ta = j++;\n
+	}\n
+	else\n
+	{\n
+		\ta = ++j;\n
+	}\n
+	printf("\""%d"\"",a);\n
+	return 0;\n
+}
+	</string>
+
+</resources>
