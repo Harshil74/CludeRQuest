@@ -51,6 +51,7 @@ public class Clue3 extends AppCompatActivity {
 
         intentIntegrator = new IntentIntegrator(this);
 
+        scanBtn.setEnabled(true);
         scanBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,6 +74,7 @@ public class Clue3 extends AppCompatActivity {
                     final String getId = obj.getString("pid");
                     if (getId.equals(previousId)){
                         demoText.setText(obj.getString("program"));
+                        scanBtn.setEnabled(false);
                         nextBtn.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {

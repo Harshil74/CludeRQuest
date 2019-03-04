@@ -22,7 +22,6 @@ import java.util.Iterator;
 import java.util.Locale;
 import java.util.Random;
 
-
 public class Home extends AppCompatActivity {
 
     TextView demoText;
@@ -62,6 +61,7 @@ public class Home extends AppCompatActivity {
 
         Log.i("sjkdhfkdjsfh","'asdhalshdlkasjkldhaskkdhaklsshdasldhlkask"+"         "+"         "+"             "+"     "+randomStr);
 
+        scanBtn.setEnabled(true);
         scanBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,6 +88,7 @@ public class Home extends AppCompatActivity {
                     if (key.equals(randomStr)){
                         String valueString = obj.getString(String.valueOf(key));
                         demoText.setText(valueString);
+                        scanBtn.setEnabled(false);
                         nextBtn.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {

@@ -3,23 +3,12 @@
     <string name="clude_r_quest">Clude R Quest</string>
     <string name="scan">Scan</string>
     <string name="next">Next</string>
-    <string name="demo">main()\n{\nprint("\""this is Demo program."\"");\n}</string>
-    <string name="q1">#include"&lt;"stdio.h"&gt;"\n
-int main()\n
-{\n
-	float j = 0.1;\n
-	int a = 5;\n
-	if(j == 0.1)\n
-	{\n
-		\ta = j++;\n
-	}\n
-	else\n
-	{\n
-		\ta = ++j;\n
-	}\n
-	printf("\""%d"\"",a);\n
-	return 0;\n
-}
-	</string>
+    <string name="demo">You need to Scan First.</string>
+    <string name="rules">Instructions:\n\n- Mobile with installed QR scanner. \nNo other electronic device are permitted.\n
+- This is a team participation event.(max 4 person is allowed in single team)\n
+- Solo participation is allowed.(they will be formed in team by event coordinator)\n
+-Use of internet is prohibited.\n\n</string>
+	<string name="note">Time will be notice by application once you hit Start.</string>
+    <string name="nextIN">Once you solve it, Answer will show you the next location.\n follow Map\npress next and scan clue from next location </string>
 
 </resources>

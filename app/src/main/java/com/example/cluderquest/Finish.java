@@ -5,6 +5,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -63,6 +65,7 @@ public class Finish extends AppCompatActivity {
 
         intentIntegrator = new IntentIntegrator(this);
 
+        scanBtn.setEnabled(true);
         scanBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,7 +88,8 @@ public class Finish extends AppCompatActivity {
                     final String resulttext = obj.getString("result");
                     if (currntId.equals("q6") || currntId.equals("q7") || currntId.equals("q8") || currntId.equals("q9")){
                         finishText.setText(resulttext);
-                        String resultHour = String.valueOf((Integer.parseInt(finishHour) - Integer.parseInt(hour)))+String.valueOf ((Integer.parseInt(finshhMinute) -Integer.parseInt(min))) +String.valueOf ((Integer.parseInt(finshSecond) - Integer.parseInt(sec))) ;
+                        scanBtn.setEnabled(false);
+                        String resultHour = String.valueOf((Integer.parseInt(finishHour) - Integer.parseInt(hour)))+"H"+"  "+String.valueOf ((Integer.parseInt(finshhMinute) -Integer.parseInt(min))) +"M"+"  "+String.valueOf ((Integer.parseInt(finshSecond) - Integer.parseInt(sec))+"S") ;
                         resultTime.setText(resultHour);
 
                     }
@@ -103,6 +107,30 @@ public class Finish extends AppCompatActivity {
             super.onActivityResult(requestCode,resultCode,data);
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.home) {
+            startActivity(new Intent(getApplicationContext(),Start.class));
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 
     @Override
     public boolean onSupportNavigateUp() {

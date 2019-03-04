@@ -3,6 +3,7 @@ package com.example.cluderquest;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -13,12 +14,18 @@ import java.util.Locale;
 public class Start extends AppCompatActivity {
 
     Button startBtn;
+    private Toolbar mTopToolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
         startBtn = findViewById(R.id.startBtn);
+
+
+        mTopToolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(mTopToolbar);
+        getSupportActionBar().setTitle("Clude R Quest");
 
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override

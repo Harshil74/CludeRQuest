@@ -6,17 +6,58 @@
     android:layout_height="match_parent"
     tools:context=".Start">
 
+    <include
+        layout="@layout/toolbar_main"
+        android:layout_width="match_parent"
+        android:id="@+id/toolbar"
+        android:layout_height="wrap_content"/>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/startBtn"
+        android:layout_below="@id/toolbar">
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <ImageView
+               android:layout_width="200dp"
+               android:id="@+id/imageLogo"
+               android:layout_height="200dp"
+               android:layout_centerHorizontal="true"
+               android:layout_margin="16sp"
+               android:src="@drawable/logo"/>
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="@string/rules"
+               android:padding="8dp"
+               android:layout_below="@id/imageLogo"
+               android:layout_margin="8dp"
+               android:id="@+id/rule"
+               android:textSize="20sp"/>
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:textSize="25dp"
+               android:text="@string/note"
+               android:gravity="center"
+               android:layout_margin="8dp"
+               android:padding="8dp"
+
+               android:layout_below="@id/rule"
+               android:textColor="@android:color/holo_red_dark"/>
+       </RelativeLayout>
+    </ScrollView>
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
         android:id="@+id/startBtn"
         android:text="want to start?"
-        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
         android:background="@color/colorPrimaryDark"
         android:textColor="@android:color/white"
         android:textSize="25dp"
-
         android:layout_margin="24dp"/>
 </RelativeLayout>
