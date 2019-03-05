@@ -75,6 +75,7 @@ public class Clue3 extends AppCompatActivity {
                     if (getId.equals(previousId)){
                         demoText.setText(obj.getString("program"));
                         scanBtn.setEnabled(false);
+                        scanBtn.setBackgroundColor(616161);
                         nextBtn.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
@@ -89,12 +90,12 @@ public class Clue3 extends AppCompatActivity {
                         });
                     }
                     else{
-                        Toast.makeText(this, "Oops!! you are in wrong way", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Oops!! you are in wrong way\nTry another answer.", Toast.LENGTH_LONG).show();
                     }
 
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    Toast.makeText(this, result.getContents(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, result.getContents(), Toast.LENGTH_LONG).show();
                 }
             }
         }

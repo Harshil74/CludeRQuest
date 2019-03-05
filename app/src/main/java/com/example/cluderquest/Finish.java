@@ -89,17 +89,18 @@ public class Finish extends AppCompatActivity {
                     if (currntId.equals("q6") || currntId.equals("q7") || currntId.equals("q8") || currntId.equals("q9")){
                         finishText.setText(resulttext);
                         scanBtn.setEnabled(false);
-                        String resultHour = String.valueOf((Integer.parseInt(finishHour) - Integer.parseInt(hour)))+"H"+"  "+String.valueOf ((Integer.parseInt(finshhMinute) -Integer.parseInt(min))) +"M"+"  "+String.valueOf ((Integer.parseInt(finshSecond) - Integer.parseInt(sec))+"S") ;
+                        scanBtn.setBackgroundColor(616161);
+                        String resultHour = String.valueOf((Integer.parseInt(finishHour) - Integer.parseInt(hour)))+"h"+"  "+String.valueOf ((Integer.parseInt(finshhMinute) -Integer.parseInt(min))) +"m"+"  "+String.valueOf ((Integer.parseInt(finshSecond) - Integer.parseInt(sec))+"s") ;
                         resultTime.setText(resultHour);
 
                     }
                     else{
-                        Toast.makeText(this, "Oops!! you are in wrong way", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Oops!! you are in wrong way\nTry another answer.  ", Toast.LENGTH_LONG).show();
                     }
 
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    Toast.makeText(this, result.getContents(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, result.getContents(), Toast.LENGTH_LONG).show();
                 }
             }
         }
@@ -117,12 +118,7 @@ public class Finish extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
+              int id = item.getItemId();
         if (id == R.id.home) {
             startActivity(new Intent(getApplicationContext(),Start.class));
             return true;

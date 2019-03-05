@@ -1,11 +1,14 @@
 package com.example.cluderquest;
 
 import android.content.Intent;
+import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -24,12 +27,13 @@ import java.util.Random;
 
 public class Home extends AppCompatActivity {
 
-    TextView demoText;
+    TextView demoText,timer;
     Button scanBtn,nextBtn;
     IntentIntegrator intentIntegrator;
     String randomStr;
 
     String hour,min,sec;
+//    public int counter;
 
     private Toolbar mTopToolbar;
 
@@ -39,6 +43,7 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         demoText = findViewById(R.id.program1Text);
+//        timer = findViewById(R.id.timer);
         scanBtn = findViewById(R.id.scan1btn);
         nextBtn = findViewById(R.id.next1btn);
 
@@ -89,6 +94,7 @@ public class Home extends AppCompatActivity {
                         String valueString = obj.getString(String.valueOf(key));
                         demoText.setText(valueString);
                         scanBtn.setEnabled(false);
+                        scanBtn.setBackgroundColor(616161);
                         nextBtn.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
@@ -97,6 +103,7 @@ public class Home extends AppCompatActivity {
                                 i.putExtra("hour",hour);
                                 i.putExtra("min",min);
                                 i.putExtra("sec",sec);
+//                                i.putExtra("timer",counter);
                                 startActivity(i);
                             }
                         });
@@ -104,7 +111,7 @@ public class Home extends AppCompatActivity {
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
-                Toast.makeText(this, "You are in wrong way .!!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "You are in wrong way .!!", Toast.LENGTH_LONG).show();
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);

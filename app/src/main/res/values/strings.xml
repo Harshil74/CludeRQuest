@@ -4,11 +4,9 @@
     <string name="scan">Scan</string>
     <string name="next">Next</string>
     <string name="demo">You need to Scan First.</string>
-    <string name="rules">Instructions:\n\n- Mobile with installed QR scanner. \nNo other electronic device are permitted.\n
-- This is a team participation event.(max 4 person is allowed in single team)\n
-- Solo participation is allowed.(they will be formed in team by event coordinator)\n
--Use of internet is prohibited.\n\n</string>
-	<string name="note">Time will be notice by application once you hit Start.</string>
+    <string name="rules">Instructions:\n\n
+        To Start game you have to scan QR code at starting point which will show the code. you need to solve it by your logical, programming skills. The answer will show you the number of next location. You need to follow the map, go there find the next QR code and repeat util you win. \n\n</string>
+    <string name="note">Time will be notice by application once you hit Start.</string>
     <string name="nextIN">Once you solve it, Answer will show you the next location.\n follow Map\npress next and scan clue from next location </string>
 
 </resources>
